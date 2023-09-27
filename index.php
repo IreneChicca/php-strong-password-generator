@@ -1,15 +1,21 @@
 <?php
 
+session_start();
+
+
+
 include 'functions.php';
 
 $is_form_submitted = isset($_GET['pswlength']);
 
 if($is_form_submitted) {
     $pswlegth = ((int)$_GET['pswlength']);
+    $_SESSION['pswlength'] = $pswlegth;
+
 
     if($pswlegth >= 5){ 
     
-        
+        header('Location: ./success.php');
     
     };
 }
@@ -59,8 +65,7 @@ if($is_form_submitted) {
         }
          ?> 
     </h6>
-     <!-- <div><h6>La tua nuova password è: </h6><?php if($is_form_submitted && $pswlegth){echo generatepsw($pswlegth);}  ?></div> -->
-
+     
 </div>
 
 

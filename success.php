@@ -1,6 +1,6 @@
 <?php
 include 'functions.php';
-
+session_start();
 ?>
 
 
@@ -17,8 +17,8 @@ include 'functions.php';
     <div class="border border-warning w-75 p-5 m-auto text-center"> 
 
     <h3>Congratulazioni, hai una nuova password!</h3>
-
-    <h1> <?php if($pswlegth){echo generatepsw($pswlegth);}  ?></h1>
+<br>
+    <h1 class="text-decoration-underline"> <?php if($_SESSION['pswlength']){echo generatepsw($_SESSION['pswlength']);}  ?></h1>
 
     </div>
 </body>
