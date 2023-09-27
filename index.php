@@ -1,29 +1,29 @@
 <?php
 
-$pswlegth = isset($_GET['pswlength']);
+$pswlegth = $_GET['pswlength'];
 
 
 
  function generatepsw($pswlegth){
 
-    $chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-òàùè+_ç°§*é^?=/&%£!@#";
+    $chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-?=/&%£!@";
 
     $password = "";
 
     for ($i = 0; $i < (int)$pswlegth; $i++){
 
-        $password .= $chars[rand(0, strlen((int)$chars) -1)];
+        $password .= $chars[rand(0, strlen($chars) -1)];
 
 
      };
 
     
-     var_dump($password);
+     
         return $password;
      }
 
     
-     echo generatepsw(20);
+     
 ?>
 
 
@@ -51,7 +51,7 @@ $pswlegth = isset($_GET['pswlength']);
     </form>
 
 
-     <div><?php if($pswlegth){echo generatepsw($pswlegth);}  ?></div>
+     <div><h6>La tua nuova password è: </h6><?php if($pswlegth){echo generatepsw($pswlegth);}  ?></div>
 
 </div>
 
