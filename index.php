@@ -1,4 +1,28 @@
-<?php ?>
+<?php
+
+$pswlegth = isset($_GET['pswlength']);
+
+
+ function generatepsw($pswlegth){
+
+    $chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-òàùè+_ç°§*é^?=/&%£!@#";
+
+    $password = "";
+
+    for ($i = 0; $i < (int)$pswlegth; $i++){
+
+        $password .= $chars[rand(0, strlen((int)$pswlegth) -1)];
+
+
+     };
+
+
+    var_dump($password);
+
+ }
+
+
+?>
 
 
 <!DOCTYPE html>
@@ -15,11 +39,11 @@
 
 <h3 class="mb-5">Inserisci la lunghezza della password:</h3>
 
-    <form action="">
+    <form method="GET">
 
     <div class="input-group mb-3">
-  <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-  <button class="btn btn-outline-secondary bg-warning text-black" type="button" id="button-addon2">Button</button>
+  <input name="pswlength" type="text" class="form-control" placeholder="Inserisci un numero da 1 a 20" aria-label="Recipient's username" aria-describedby="button-addon2">
+  <button class="btn btn-outline-secondary bg-warning text-black" >Invia</button>
 </div>
 
     </form>
