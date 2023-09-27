@@ -1,7 +1,7 @@
 <?php  
 function generatepsw($pswlegth){
 
-    $chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-?=/&%£!@";
+    $chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-?=/%£!@*^";
 
     $password = "";
 
